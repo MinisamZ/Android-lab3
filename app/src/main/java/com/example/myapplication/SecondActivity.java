@@ -22,11 +22,11 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void addListenerOnButton() {
-        num1 = (EditText) findViewById(R.id.editTextNumber);
-        view1 = (TextView) findViewById(R.id.textViewResult);
-        btn = (Button) findViewById(R.id.button);
-        btn2 = (Button) findViewById(R.id.button2);
-        btnTask2 = findViewById(R.id.buttonTask2);
+        num1 = (EditText) findViewById(R.id.editText2Number);
+        view1 = (TextView) findViewById(R.id.textView2Result);
+        btn = (Button) findViewById(R.id.button2);
+        btn2 = (Button) findViewById(R.id.button22);
+        btnTask2 = findViewById(R.id.button2Task2);
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     @SuppressLint("SetTextI18n")
