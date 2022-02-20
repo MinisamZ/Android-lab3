@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     private EditText num1, num2, num3;
     private TextView view1;
-    private Button btn,btn2;
+    private Button btn, btn2, btnTask2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         view1 = (TextView) findViewById(R.id.textViewResult);
         btn = (Button) findViewById(R.id.button);
         btn2 = (Button) findViewById(R.id.button2);
+        btnTask2 = findViewById(R.id.buttonTask2);
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     @SuppressLint("SetTextI18n")
@@ -53,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        btnTask2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent("com.example.myapplication.SecondActivity");
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
