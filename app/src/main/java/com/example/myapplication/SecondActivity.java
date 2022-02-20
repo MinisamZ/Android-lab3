@@ -46,14 +46,14 @@ public class SecondActivity extends AppCompatActivity {
                         double length = Double.parseDouble(num1.getText().toString());
                         Cube cube = new Cube(length);
                         view1.setText(Double.toString(cube.getVolume()));
+                        System.out.println("cube 2");
                     }
                 }
         );
         btnTask2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent("com.example.myapplication.MainActivity");
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }
