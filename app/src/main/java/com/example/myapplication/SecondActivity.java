@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
-    private EditText num1, num2, num3;
+    private EditText num1;
     private TextView view1;
     private Button btn, btn2, btnTask2;
 
@@ -23,22 +23,18 @@ public class SecondActivity extends AppCompatActivity {
 
     public void addListenerOnButton() {
         num1 = (EditText) findViewById(R.id.editTextNumber);
-        num2 = (EditText) findViewById(R.id.editTextNumber2);
-        num3 = (EditText) findViewById(R.id.editTextNumber3);
         view1 = (TextView) findViewById(R.id.textViewResult);
         btn = (Button) findViewById(R.id.button);
-        btn2 = (Button) findViewById(R.id.button22);
+        btn2 = (Button) findViewById(R.id.button2);
         btnTask2 = findViewById(R.id.buttonTask2);
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onClick(View view) {
-                        int length = Integer.parseInt(num1.getText().toString());
-                        int width = Integer.parseInt(num2.getText().toString());
-                        int height = Integer.parseInt(num3.getText().toString());
-                        Cuboid cub = new Cuboid(length, width, height);
-                        view1.setText(Double.toString(cub.getSurfaceArea()));
+                        double length = Double.parseDouble(num1.getText().toString());
+                        Cube cube = new Cube(length);
+                        view1.setText(Double.toString(cube.getSurfaceArea()));
                     }
                 }
         );
@@ -47,11 +43,9 @@ public class SecondActivity extends AppCompatActivity {
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onClick(View view) {
-                        int length = Integer.parseInt(num1.getText().toString());
-                        int width = Integer.parseInt(num2.getText().toString());
-                        int height = Integer.parseInt(num3.getText().toString());
-                        Cuboid cub = new Cuboid(length, width, height);
-                        view1.setText(Double.toString(cub.getVolume()));
+                        double length = Double.parseDouble(num1.getText().toString());
+                        Cube cube = new Cube(length);
+                        view1.setText(Double.toString(cube.getVolume()));
                     }
                 }
         );
